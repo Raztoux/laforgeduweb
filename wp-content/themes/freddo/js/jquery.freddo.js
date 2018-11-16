@@ -25,7 +25,7 @@
 			directionNav: false, 
 			slideshowSpeed: $('.freddo_onepage_section.freddo_slider').attr('data-speed'),
 			animationSpeed: 1000,
-			pauseOnHover: true
+			pauseOnHover: $('.freddo_onepage_section.freddo_slider').attr('data-hover')
 		  });
 		}
 	});

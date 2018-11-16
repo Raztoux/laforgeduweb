@@ -1,0 +1,19 @@
+/*
+Theme Name: Freddo Child
+Description: Freddo Child
+Author: Thomas Dufossé-Michelangeli | La Forge du Web
+Author URI: http://laforgeduweb.fr/
+Template: Freddo
+Version: 0.1.0
+*/
+
+.flexslider .slides > li .flexText .inside h2:after {
+	content: "";
+    width: 20px;
+    height: 1px;
+    background-color: #d8be13 !important;
+    position: absolute;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -10px;
+}

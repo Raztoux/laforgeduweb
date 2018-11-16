@@ -185,7 +185,7 @@ class Freddo_Admin {
 						</h3>
 						<p><?php esc_html_e( 'Click below to translate this theme into your own language.', 'freddo' ) ?></p>
 						<p>
-							<a target="_blank" href="<?php echo esc_url( 'http://translate.wordpress.org/projects/wp-themes/freddo' ); ?>" class="button button-secondary">
+							<a target="_blank" href="<?php echo esc_url( 'https://translate.wordpress.org/projects/wp-themes/freddo' ); ?>" class="button button-secondary">
 								<?php
 								esc_html_e( 'Translate', 'freddo' );
 								echo ' ' . esc_html($theme->display( 'Name' ));

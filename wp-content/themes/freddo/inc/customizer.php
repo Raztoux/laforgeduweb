@@ -890,6 +890,21 @@ function freddo_custom_settings_register( $wp_customize ) {
 		'active_callback' => 'freddo_onepage_is_scroll_in_post',
 		'priority' => 5,
     ) );
+	/* Stop on hover */
+	$wp_customize->add_setting('freddo_theme_options[_onepage_stoponhover_slider]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'freddo_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('freddo_theme_options[_onepage_stoponhover_slider]', array(
+        'label'      => __( 'Stop slider on mouse hover', 'freddo' ),
+        'section'    => 'cresta_freddo_onepage_section_slider',
+        'settings'   => 'freddo_theme_options[_onepage_stoponhover_slider]',
+        'type'       => 'checkbox',
+		'active_callback' => 'freddo_is_slider_active',
+		'priority' => 5,
+    ) );
 	for( $number = 1; $number < FREDDO_VALUE_FOR_SLIDER; $number++ ){
 		/* Slider Text */
 		$wp_customize->add_setting('freddo_theme_options[_onepage_head_'.$number.'_slider]', array(
@@ -1707,7 +1722,7 @@ function freddo_custom_settings_register( $wp_customize ) {
         'default'    => '',
         'type'       => 'option',
         'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'freddo_sanitize_text',
 		'transport' => 'postMessage'
     ) );
 	$wp_customize->add_control('freddo_theme_options[_onepage_phrase_cta]', array(
@@ -1723,7 +1738,7 @@ function freddo_custom_settings_register( $wp_customize ) {
         'default'    => '',
         'type'       => 'option',
         'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'freddo_sanitize_text',
 		'transport' => 'postMessage'
     ) );
 	$wp_customize->add_control('freddo_theme_options[_onepage_desc_cta]', array(
@@ -2859,6 +2874,11 @@ function freddo_customize_register( $wp_customize ) {
 		  'settings' => 'freddo_theme_options[_onepage_phrase_cta]',
 		  'render_callback' => 'freddo_selective_refresh_phrase_cta',
 		) );
+		$wp_customize->selective_refresh->add_partial('freddo_theme_options[_onepage_desc_cta]', array(
+		  'selector' => '.cta_columns .ctaPhrase p',
+		  'settings' => 'freddo_theme_options[_onepage_desc_cta]',
+		  'render_callback' => 'freddo_selective_refresh_desc_cta',
+		) );
 		$wp_customize->selective_refresh->add_partial('freddo_theme_options[_onepage_title_services]', array(
 		  'selector' => '.freddo_action_services .freddo_main_text',
 		  'settings' => 'freddo_theme_options[_onepage_title_services]',
@@ -2910,7 +2930,10 @@ function freddo_selective_refresh_title_skills() {
 	return esc_html(freddo_options('_onepage_title_skills'));
 }
 function freddo_selective_refresh_phrase_cta() {
-	return esc_html(freddo_options('_onepage_phrase_cta'));
+	return wp_kses(freddo_options('_onepage_phrase_cta'), freddo_allowed_html());
+}
+function freddo_selective_refresh_desc_cta() {
+	return wp_kses(freddo_options('_onepage_desc_cta'), freddo_allowed_html());
 }
 function freddo_selective_refresh_title_services() {
 	return esc_html(freddo_options('_onepage_title_services'));

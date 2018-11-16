@@ -19,10 +19,10 @@ $showCta = freddo_options('_onepage_section_cta', '');
 				<div class="ctaIcon"><i class="<?php echo esc_attr($ctaIcon); ?>" aria-hidden="true"></i></div>
 				<div class="ctaPhrase">
 					<?php if ($ctaPhrase || is_customize_preview()) : ?>
-						<h3><?php echo esc_html($ctaPhrase); ?></h3>
+						<h3><?php echo wp_kses($ctaPhrase, freddo_allowed_html()); ?></h3>
 					<?php endif; ?>
 					<?php if ($ctaDesc || is_customize_preview()) : ?>
-						<p><?php echo esc_html($ctaDesc); ?></p>
+						<p><?php echo wp_kses($ctaDesc, freddo_allowed_html()); ?></p>
 					<?php endif; ?>
 				</div>
 			</div>

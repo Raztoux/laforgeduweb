@@ -2,8 +2,8 @@
 Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
-Tested up to: 4.9
-Stable tag: 1.1.9
+Tested up to: 5.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Freddo WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -39,6 +39,13 @@ Freddo includes support for Infinite Scroll in Jetpack, WooCommerce and WPML.
 * Default image in the theme (https://www.pexels.com/photo/nature-summer-purple-yellow-36753/) Pexels Free photos for commercial and personal works
 
 == Changelog ==
+
+= Version 1.2.1 =
+* Added an option to activate/deactivate the stop on mouse hover for the slider
+
+= Version 1.2.0 =
+* Improved About Us section
+* Improved Call to Action section
 
 = Version 1.1.9 =
 * Minor bug fixes

@@ -7,6 +7,12 @@ $showSlider = freddo_options('_onepage_section_slider', '');
 	$sliderEffectScroll = freddo_options('_onepage_effect_slider', 'withZoom');
 	$sliderSectionID = freddo_options('_onepage_id_slider', 'slider');
 	$sliderAnimationSpeed = freddo_options('_onepage_animation_speed', '7000');
+	$sliderStopOnHover = freddo_options('_onepage_stoponhover_slider', '1');
+	if ($sliderStopOnHover) {
+		$mouseHover = true;
+	} else {
+		$mouseHover = false;
+	}
 	$slideImage = array();
 	$slideText = array();
 	$slideSubText = array();
@@ -16,7 +22,7 @@ $showSlider = freddo_options('_onepage_section_slider', '');
 		$slideSubText["$number"] = freddo_options('_onepage_subtext_'.$number.'_slider', '');
 	}
 ?>
-<section class="freddo_onepage_section freddo_slider <?php echo esc_attr($sliderEffectScroll); ?>" id="<?php echo esc_attr($sliderSectionID); ?>" data-speed="<?php echo intval($sliderAnimationSpeed); ?>">
+<section class="freddo_onepage_section freddo_slider <?php echo esc_attr($sliderEffectScroll); ?>" id="<?php echo esc_attr($sliderSectionID); ?>" data-speed="<?php echo intval($sliderAnimationSpeed); ?>" data-hover="<?php echo esc_attr($sliderStopOnHover); ?>">
 	<div class="flexslider">
 	  <ul class="slides">
 		<?php for( $number = 1; $number < FREDDO_VALUE_FOR_SLIDER; $number++ ) : ?>

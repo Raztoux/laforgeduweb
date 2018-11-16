@@ -22,12 +22,31 @@
 				<div class="aboutInner">
 					<?php if($aboutusPageBox) : ?>
 					<h3><?php echo get_the_title(intval($aboutusPageBox)); ?></h3>
-					<?php 
-						$post_content = get_post(intval($aboutusPageBox));
-						$content = $post_content->post_content;
-						$content = apply_filters( 'the_content', $content );
-						$content = str_replace( ']]>', ']]&gt;', $content );
-						echo $content;
+					<?php
+						$args = array(
+						  'p'         => intval($aboutusPageBox),
+						  'post_type' => 'page'
+						);
+						$query = new WP_Query( $args );
+						if ( $query->have_posts() ) :
+							while ( $query->have_posts() ) :
+								$query->the_post();
+								?>
+								<article id="post-<?php the_ID(); ?>" <?php post_class( 'freddo-aboutus' ); ?> >
+									<?php
+									the_content(
+										sprintf(
+											/* translators: %s: Name of current post */
+											__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'freddo' ),
+											get_the_title()
+										)
+									);
+									?>
+								</article>
+								<?php
+							endwhile;
+						endif;
+						wp_reset_postdata();
 					?>
 					<?php endif; ?>
 					<?php if($aboutusButtonText || is_customize_preview()): ?>
