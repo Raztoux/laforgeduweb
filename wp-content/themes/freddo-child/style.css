@@ -17,3 +17,7 @@ Version: 0.1.0
     margin-left: -10px;
     bottom: -10px;
 }
+
+.page-template-default #primary.content-area {
+	width: 100%;
+}
