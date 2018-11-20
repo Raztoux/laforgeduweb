@@ -189,7 +189,7 @@
 					<p><?php echo $content1; ?></p>
 				<?php endif; ?>
 				<?php if($textButton1 || is_customize_preview()): ?>
-					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_1) ? esc_url($doc_price_1): esc_url($linkButton1); ?>"><?php echo esc_html($textButton1); ?></a></div>
+					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_1) ? esc_url($doc_price_1): esc_url($linkButton1); ?>" target="_blank"><?php echo esc_html($textButton1); ?></a></div>
 				<?php endif; ?>
 			</div>
 			<div class="four features_columns_single">
@@ -206,7 +206,7 @@
 					<p><?php echo $content2; ?></p>
 				<?php endif; ?>
 				<?php if($textButton2 || is_customize_preview()): ?>
-					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_2) ? esc_url($doc_price_2): esc_url($linkButton2); ?>"><?php echo esc_html($textButton2); ?></a></div>
+					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_2) ? esc_url($doc_price_2): esc_url($linkButton2); ?>" target="_blank"><?php echo esc_html($textButton2); ?></a></div>
 				<?php endif; ?>
 			</div>
 			<div class="four features_columns_single">
@@ -223,7 +223,7 @@
 					<p><?php echo $content3; ?></p>
 				<?php endif; ?>
 				<?php if($textButton3 || is_customize_preview()): ?>
-					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_3) ? esc_url($doc_price_3): esc_url($linkButton3); ?>"><?php echo esc_html($textButton3); ?></a></div>
+					<div class="freddoButton features"><a class="button_price" href="<?php echo ($doc_price_3) ? esc_url($doc_price_3): esc_url($linkButton3); ?>" target="_blank"><?php echo esc_html($textButton3); ?></a></div>
 				<?php endif; ?>
 			</div>
 			<div class="four features_columns_single">
