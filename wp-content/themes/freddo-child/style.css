@@ -21,3 +21,10 @@ Version: 0.1.0
 .page-template-default #primary.content-area {
 	width: 100%;
 }
+
+.freddoButton .button_price {
+		color: #000;
+}
+.freddoButton .button_price:hover {
+		color: #FFF;
+}
