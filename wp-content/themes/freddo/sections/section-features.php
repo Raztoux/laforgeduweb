@@ -182,7 +182,8 @@
 					$post_content1 = get_post(intval($choosePageBox1));
 					$content1 = $post_content1->post_content;
 					?>
-					<p><?php echo wp_trim_words($content1 , intval($textLenght), esc_html($customMore) ); ?></p>
+					<!-- <p><?php //echo wp_trim_words($content1 , intval($textLenght), esc_html($customMore) ); ?></p> -->
+					<p><?php echo $content1; ?></p>
 				<?php endif; ?>
 				<?php if($textButton1 || is_customize_preview()): ?>
 					<div class="freddoButton features"><a href="<?php echo esc_url($linkButton1); ?>"><?php echo esc_html($textButton1); ?></a></div>
@@ -198,7 +199,8 @@
 					$post_content2 = get_post(intval($choosePageBox2));
 					$content2 = $post_content2->post_content;
 					?>
-					<p><?php echo wp_trim_words($content2 , intval($textLenght), esc_html($customMore) ); ?></p>
+					<!-- <p><?php //echo wp_trim_words($content2 , intval($textLenght), esc_html($customMore) ); ?></p> -->
+					<p><?php echo $content2; ?></p>
 				<?php endif; ?>
 				<?php if($textButton2 || is_customize_preview()): ?>
 					<div class="freddoButton features"><a href="<?php echo esc_url($linkButton2); ?>"><?php echo esc_html($textButton2); ?></a></div>
@@ -214,7 +216,8 @@
 					$post_content3 = get_post(intval($choosePageBox3));
 					$content3 = $post_content3->post_content;
 					?>
-					<p><?php echo wp_trim_words($content3 , intval($textLenght), esc_html($customMore) ); ?></p>
+					<!-- <p><?php //echo wp_trim_words($content3 , intval($textLenght), esc_html($customMore) ); ?></p> -->
+					<p><?php echo $content3; ?></p>
 				<?php endif; ?>
 				<?php if($textButton3 || is_customize_preview()): ?>
 					<div class="freddoButton features"><a href="<?php echo esc_url($linkButton3); ?>"><?php echo esc_html($textButton3); ?></a></div>
@@ -230,7 +233,8 @@
 					$post_content4 = get_post(intval($choosePageBox4));
 					$content4 = $post_content4->post_content;
 					?>
-					<p><?php echo wp_trim_words($content4 , intval($textLenght), esc_html($customMore) ); ?></p>
+					<!-- <p><?php //echo wp_trim_words($content4 , intval($textLenght), esc_html($customMore) ); ?></p> -->
+					<p><?php echo $content4; ?></p>
 				<?php endif; ?>
 				<?php if($textButton4 || is_customize_preview()): ?>
 					<div class="freddoButton features"><a href="<?php echo esc_url($linkButton4); ?>"><?php echo esc_html($textButton4); ?></a></div>
